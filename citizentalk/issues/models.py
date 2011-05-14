@@ -33,10 +33,10 @@ class Issue(models.Model):
     attachments = models.ManyToManyField(Attachment, blank = True)
     reporter = models.ForeignKey(User)
 
+    tags = TagField()
+
     def __unicode__(self):
         return self.title
-
-tagging.register(Issue)
 
 # horrible hack for failing tags overwrite
 from tagging.models import Tag
