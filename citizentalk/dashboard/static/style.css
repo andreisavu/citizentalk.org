@@ -15,6 +15,10 @@ h1 {
     font-size : 26px;
 }
 
+h2 {
+    font-size : 21px;
+}
+
 div.wrapper {
     margin : 0 auto 0 auto;
     padding : 0 30px 0 30px;
@@ -165,6 +169,10 @@ form {
     width : 400px;
 }
 
+form h2 {
+    margin : 0 0 10px 0;
+}
+
 input[type=text], input[type=password] {
     border : 1px solid #eeeeee;
     border-radius : 5px 5px 5px 5px;
@@ -173,4 +181,30 @@ input[type=text], input[type=password] {
     margin : 10px 0 20px 0;
     padding : 5px 5px 5px 5px;
     width : 380px;
+}
+
+.notice {
+    background-color : #ffeeee;
+    border : 1px solid #ffaaaa;
+    border-radius : 5px 5px 5px 5px;
+    color : #ee4040;
+    margin : 10px 0 10px 0;
+    padding : 5px 5px 5px 5px;
+}
+
+.helptext {
+    color : #969696;
+    display : block;
+    font-size : 12px;
+    margin : 0 0 5px 0;
+}
+
+ul.errorlist {
+    list-style-type : none;
+}
+
+ul.errorlist li {
+    color : #ee4040;
+    font-size : 12px;
+    margin : 0 0 5px 0;
 }
