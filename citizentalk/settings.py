@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'debug_toolbar',
     'issues',
+    'institutions',
     'dashboard',
     'tagging',
     'profiles',

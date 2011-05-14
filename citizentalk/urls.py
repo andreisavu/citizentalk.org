@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^$', include('citizentalk.dashboard.urls')),
     url(r'^issues/', include('citizentalk.issues.urls')),
+    url(r'^institutions/', include('citizentalk.institutions.urls')),
 
     url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', 
