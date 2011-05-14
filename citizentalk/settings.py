@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'debug_toolbar',
     'issues',
+    'dashboard',
 )
 
 # A sample logging configuration. The only tangible logging

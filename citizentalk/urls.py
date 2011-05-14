@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'citizentalk.views.home', name='home'),
     # url(r'^citizentalk/', include('citizentalk.foo.urls')),
 
+    url(r'^', include('citizentalk.dashboard.urls')),
+
     url(r'^issues/', include('citizentalk.issues.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
