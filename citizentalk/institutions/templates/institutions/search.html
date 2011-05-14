@@ -7,7 +7,7 @@
 <ul>
 {% for institution in institutions %}
   <li>
-    {{ institution.title }}
+    <a href="/institutions/{{ institution.id }}">{{ institution.title }}</a>
     [<a href="/institutions/edit?id={{institution.id}}">edit</a>]
   </li>
 {% endfor %}
