@@ -1,144 +1,153 @@
 * {
-        margin : 0;
-        outline : 0;
-        padding : 0;
+    margin : 0;
+    outline : 0;
+    padding : 0;
 }
 
 body {
-        background : #ffffff url(resources/images/bg-top-x.jpg) repeat-x;
-        color : #323232;
-        font-family : 'Verdana', 'Geneva', sans-serif;
-        font-size : 14px;
+    background : #ffffff url(resources/images/bg-top-x.jpg) repeat-x;
+    color : #323232;
+    font-family : 'Verdana', 'Geneva', sans-serif;
+    font-size : 14px;
 }
 
 h1 {
-        font-size : 26px;
+    font-size : 26px;
 }
 
 div.wrapper {
-        margin : 0 auto 0 auto;
-        padding : 0 30px 0 30px;
-        width : 940px;
+    margin : 0 auto 0 auto;
+    padding : 0 30px 0 30px;
+    width : 940px;
 }
 
 div#top {
-        background : url(resources/images/bg-top.jpg) 0 -1px no-repeat;
+    background : url(resources/images/bg-top.jpg) 0 -1px no-repeat;
+    min-height : 480px;
+}
+
+a#logo-top {
+    display : block;
+    float : left;
+    height : 50px;
+    margin : 25px 0 0 0;
+    width : 200px;
 }
 
 div#header {
-        height : 100px;
-        width : 940px;
+    height : 100px;
+    width : 940px;
 }
 
 div#header-menu {
-        background-color : #ffffff;
-        border-radius : 5px 5px 5px 5px;
-        box-shadow : rgba(0,0,0, 0.1) 0px 0px 8px;
-        float : right;
-        padding : 5px 0 5px 0;
-        margin : 38px 0 0 0;
+    background-color : #ffffff;
+    border-radius : 5px 5px 5px 5px;
+    box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    float : right;
+    padding : 5px 0 5px 0;
+    margin : 38px 0 0 0;
 
-        -moz-border-radius : 5px 5px 5px 5px;
-        -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
-        -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    -moz-border-radius : 5px 5px 5px 5px;
+    -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
 }
 
 div#header-menu a {
-        color : #646464;
-        margin : 0 5px 0 5px;
-        text-decoration : none;
+    color : #646464;
+    margin : 0 5px 0 5px;
+    text-decoration : none;
 }
 
 div#header-menu a:hover {
-        color : #000000;
+    color : #000000;
 }
 
 div.content {
-        padding : 10px 0 10px 0;
+    padding : 10px 0 10px 0;
 }
 
 div#floating-island {
-        background : url(resources/images/floating-island.jpg) no-repeat;
-        float : left;
-        height : 400px;
-        width : 640px;
+    background : url(resources/images/floating-island.jpg) no-repeat;
+    float : left;
+    height : 400px;
+    width : 640px;
 }
 
 div#updates {
-        float : right;
-        padding : 40px 0 0 0;
-        text-align : center;
-        width : 280px;
+    float : right;
+    padding : 40px 0 0 0;
+    text-align : center;
+    width : 280px;
 }
 
 div.updates-block {
-        background-color : #eeeeee;
-        border : 1px solid #969696;
-        border-radius : 5px 5px 5px 5px;
-        box-shadow : rgba(0,0,0, 0.1) 0px 0px 8px;
-        margin : 10px 0 0 0;
-        padding : 10px 10px 10px 10px;
-        text-shadow : 0 1px 0 #ffffff;
+    background-color : #eeeeee;
+    border : 1px solid #969696;
+    border-radius : 5px 5px 5px 5px;
+    box-shadow : rgba(0,0,0, 0.1) 0px 0px 8px;
+    margin : 10px 0 0 0;
+    padding : 10px 10px 10px 10px;
+    text-shadow : 0 1px 0 #ffffff;
 
-        -moz-border-radius : 5px 5px 5px 5px;
-        -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
-        -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    -moz-border-radius : 5px 5px 5px 5px;
+    -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
 }
 
 div.updates-block b {
-        font-size : 18px;
+    font-size : 18px;
 }
 
 div#footer {
-        background : url(resources/images/bg-bottom-x.jpg) repeat-x;
-        color : #969696;
-        height : 200px;
-        width : 100%;
+    background : url(resources/images/bg-bottom-x.jpg) repeat-x;
+    color : #969696;
+    height : 200px;
+    width : 100%;
 }
 
 div#footer-top {
-        height : 145px;
+    height : 145px;
 }
 
 div#footer p {
-        float : left;
-        width : 680px;
+    float : left;
+    width : 680px;
 }
 
 div#footer-top-links {
-        float : right;
-        width : 240px;
+    float : right;
+    width : 240px;
 }
 
 div#footer-top-links a {
-        display : block;
-        line-height : 20px;
+    display : block;
+    line-height : 20px;
 }
 
 div#footer-bottom {
-        line-height : 50px;
-        height : 50px;
-        margin : 5px 0 0 0;
+    line-height : 50px;
+    height : 50px;
+    margin : 5px 0 0 0;
 }
 
 div#footer a {
-        color : #88da0e;
-        text-decoration : none;
+    color : #88da0e;
+    text-decoration : none;
 }
 
 div#footer a:hover {
-        color : #ffffff;
+    color : #ffffff;
 }
 
 a#logo-footer {
-        background : url(resources/images/logo-footer.jpg) no-repeat;
-        display : block;
-        float : right;
-        height : 25px;
-        margin : 13px 0 0 0;
-        width : 100px;
+    background : url(resources/images/logo-footer.jpg) no-repeat;
+    display : block;
+    float : right;
+    height : 25px;
+    margin : 13px 0 0 0;
+    width : 100px;
 }
 
 .clear {
-        clear : both;
+    clear : both;
 }

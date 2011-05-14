@@ -1,71 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-                <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-                <title>{% block title %}CitizenTalk{% endblock %}</title>
-                <link href="/static/style.css" media="screen" rel="stylesheet" type="text/css" />
-                <link href="resources/js/" media="screen" rel="stylesheet" type="text/css" />
-        </head>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <title>{% block title %}CitizenTalk{% endblock %}</title>
+        <link href="/static/style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="resources/js/" media="screen" rel="stylesheet" type="text/css" />
+    </head>
 
-        <body>
-                <div class="wrapper" id="top">
-                        <div id="header">
-                                <div id="header-menu">
-                                {% block menu %}
-                                        <a href="/issues/explore/">Explore</a>
-                                        {% if user.is_authenticated %}
-                                            {% if user.is_superuser %}
-                                                <a href="/admin/">Admin</a>
-                                            {% endif %}
-                                            <a href="/logout/">Sign out</a>
-                                        {% else %}
-                                            <a href="/login/">Sign in</a>
-                                        {% endif %}
-                                {% endblock %}
-                                </div><!-- #header-menu -->
+    <body>
+        <div class="wrapper" id="top">
+            <div id="header">
+                <a href="/" id="logo-top"></a>
 
-                                <div class="clear">
-                                        <!-- -->
-                                </div> <!-- .clear -->
-                        </div><!-- header -->
-                        
-                        <div class="content">
-                                {% block content %}{% endblock %}
-                        </div><!-- .content -->
-                </div><!-- .wrapper #top -->
+                <div id="header-menu">
+                {% block menu %}
+                    <a href="/issues/explore/">Explore</a>
+                    {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
+                        <a href="/admin/">Admin</a>
+                        {% endif %}
+                        <a href="/logout/">Sign out</a>
+                    {% else %}
+                        <a href="/login/">Sign in</a>
+                    {% endif %}
+                {% endblock %}
+                </div><!-- #header-menu -->
 
-                <div id="footer">
-                        <div class="wrapper">
-                                <div id="footer-top">
-                                        <div class="content">
-                                                <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sagittis lacus, ut vestibulum lectus venenatis in. Proin nec arcu lorem, et pharetra metus. Maecenas blandit tempor nunc, sed commodo leo malesuada sit amet. Sed imperdiet, nulla a interdum pharetra, erat nisl ornare est, blandit porttitor est velit in nibh. Suspendisse at eros pretium neque varius fringilla sed ut sapien.
-                                                </p>
+                <div class="clear">
+                    <!-- -->
+                </div> <!-- .clear -->
+            </div><!-- header -->
+            
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div><!-- .content -->
+        </div><!-- .wrapper #top -->
 
-                                                <div id="footer-top-links">
-                                                        <a href="#">Lorem ipsum</a>
-                                                        <a href="#">Dolor sit amet</a>
-                                                        <a href="#">Consectetur adipiscing</a>
-                                                        <a href="#">Elit commodo</a>
-                                                        <a href="#">Nunc fermentum</a>
-                                                </div><!-- #footer-links -->
+        <div id="footer">
+            <div class="wrapper">
+                <div id="footer-top">
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sagittis lacus, ut vestibulum lectus venenatis in. Proin nec arcu lorem, et pharetra metus. Maecenas blandit tempor nunc, sed commodo leo malesuada sit amet. Sed imperdiet, nulla a interdum pharetra, erat nisl ornare est, blandit porttitor est velit in nibh. Suspendisse at eros pretium neque varius fringilla sed ut sapien.
+                        </p>
 
-                                                <div class="clear">
-                                                        <!-- -->
-                                                </div> <!-- .clear -->
-                                        </div> <!-- .content -->
-                                </div><!-- #footer-top -->
+                        <div id="footer-top-links">
+                            <a href="#">Lorem ipsum</a>
+                            <a href="#">Dolor sit amet</a>
+                            <a href="#">Consectetur adipiscing</a>
+                            <a href="#">Elit commodo</a>
+                            <a href="#">Nunc fermentum</a>
+                        </div><!-- #footer-links -->
 
-                                <div id="footer-bottom">
-                                        Copyright &copy; 2011 - <a href="#">www.citizentalk.org</a>
+                        <div class="clear">
+                            <!-- -->
+                        </div> <!-- .clear -->
+                    </div> <!-- .content -->
+                </div><!-- #footer-top -->
 
-                                        <a href="#" id="logo-footer"></a>
+                <div id="footer-bottom">
+                    Copyright &copy; 2011 - <a href="#">www.citizentalk.org</a>
 
-                                        <div class="clear">
-                                                <!-- -->
-                                        </div> <!-- .clear -->
-                                </div><!-- #footer-bottom -->
-                        </div><!-- .wrapper -->
-                </div><!-- #footer -->
-        </body>
+                    <a href="#" id="logo-footer"></a>
+
+                    <div class="clear">
+                        <!-- -->
+                    </div> <!-- .clear -->
+                </div><!-- #footer-bottom -->
+            </div><!-- .wrapper -->
+        </div><!-- #footer -->
+    </body>
 </html>
