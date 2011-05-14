@@ -3,8 +3,15 @@ import tagging
 from tagging.fields import TagField
 
 class Issue(models.Model):
+    ISSUE_STATES = (
+        (u'new', u'New'),
+        (u'ass', u'Assigned'),
+        (u'res', u'Resolved'),
+        (u'acc', u'Accepted')
+    )
     title = models.CharField(max_length=200)
     description = models.TextField()
+    state = models.CharField(max_length=3, choices=ISSUE_STATES)
     created_at = models.DateTimeField('date created', auto_now_add = True)
     updated_at = models.DateTimeField('date updated', auto_now = True)
 
