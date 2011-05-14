@@ -11,9 +11,11 @@
                 <div class="wrapper" id="top">
                         <div id="header">
                                 <div id="header-menu">
-                                        <a href="#">Example Link</a>
-                                        <a href="#">Example Link</a>
-                                        <a href="#">Example Link</a>
+                                {% block menu %}
+                                        <a href="/issues/explore/">Explore</a>
+                                        <a href="/register/">Register</a>
+                                        <a href="/login/">Sign in</a>
+                                {% endblock %}
                                 </div><!-- #header-menu -->
 
                                 <div class="clear">
