@@ -1,6 +1,8 @@
 Django==1.3
 distribute==0.6.16
 django-debug-toolbar-django13==0.8.4
+django-tagging-ng==0.3.3
+gunicorn==0.12.1
 httplib2==0.6.0
 oauth2==1.5.170
 wsgiref==0.1.2
