@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'issues',
     'dashboard',
     'tagging',
+    'profiles',
 )
 
 # A sample logging configuration. The only tangible logging

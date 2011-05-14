@@ -1,0 +1,16 @@
+
+{% extends "base_layout.html" %}
+
+{% block content %}
+
+<h1>Register new account</h1>
+
+<form method="post" action="/join/"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="Register Account" />
+
+</form>
+
+{% endblock %}
+
