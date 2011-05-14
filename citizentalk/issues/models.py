@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 import tagging
 from tagging.fields import TagField
 
@@ -22,14 +23,15 @@ class Issue(models.Model):
 
     state = models.CharField(max_length = 3, choices = ISSUE_STATES, default = 'new')
 
-    latitude = models.DecimalField(max_digits = 15, decimal_places = 10)
-    longitude = models.DecimalField(max_digits = 15, decimal_places = 10)
-    location = models.CharField(max_length = 200)
+    latitude = models.DecimalField(max_digits = 15, decimal_places = 10, blank = True)
+    longitude = models.DecimalField(max_digits = 15, decimal_places = 10, blank = True)
+    location = models.CharField(max_length = 200, blank = True)
 
     created_at = models.DateTimeField('date created', auto_now_add = True)
     updated_at = models.DateTimeField('date updated', auto_now = True)
 
     attachments = models.ManyToManyField(Attachment, blank = True)
+    reporter = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.title
