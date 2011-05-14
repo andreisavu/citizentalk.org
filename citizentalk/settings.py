@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'dashboard',
     'tagging',
     'profiles',
+    'gunicorn'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -161,3 +162,10 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
+

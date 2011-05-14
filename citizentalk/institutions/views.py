@@ -25,3 +25,8 @@ def edit(request):
 
     return render_to_response('institutions/edit.html',
         context_instance = RequestContext(request, {'form': form}))
+
+def view(request, id):
+    institution = get_object_or_404(Institution, pk=id)
+    return render_to_response('institutions/view.html',
+        context_instance=RequestContext(request, {'institution': institution}))
