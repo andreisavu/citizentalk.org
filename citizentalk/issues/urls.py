@@ -5,6 +5,6 @@ import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='issues-index'),
-    url(r'^explore', views.explore, name='issues-explore'),
+    url(r'^new', views.new, name='issues-new'),
 )
 
