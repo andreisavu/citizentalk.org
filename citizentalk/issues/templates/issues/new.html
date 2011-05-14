@@ -2,11 +2,29 @@
 
 {% block content %}
 
-<form method="post" action="/issues/new/">
+<div id="map-add-issue">
+    <div id="map-add-issue-container">
+        <!-- -->
+    </div><!-- #map-add-issue-container -->
+
+    <script type="text/javascript" src="http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=A89ep3fV34E7xmR7phcrGoALC_7by21vdTDllAAXHkWIT6ON_iQJbI6LOCndWbN0"></script>
+
+    <script type="text/javascript">  
+        var map = new YMap(document.getElementById('map-add-issue-container'));
+
+        map.addTypeControl();
+        map.setMapType(YAHOO_MAP_REG)
+        map.drawZoomAndCenter("San Francisco", 3);
+    </script>
+</div><!-- #map-add-issue- -->
+
+<form id="add-issue" method="post" action="/issues/new/">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Create Issue" />
 </form>
 
+<div class="clear">
+    <!-- -->
+</div><!-- .clear -->
 {% endblock %}
-

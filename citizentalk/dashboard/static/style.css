@@ -19,6 +19,15 @@ h2 {
     font-size : 21px;
 }
 
+a {
+    color : #969696;
+    text-decoration : none;
+}
+
+a:hover {
+    color : #000000;
+}
+
 div.wrapper {
     margin : 0 auto 0 auto;
     padding : 0 30px 0 30px;
@@ -37,6 +46,8 @@ a#logo-top {
     margin : 25px 0 0 0;
     width : 200px;
 }
+
+/* Header */
 
 div#header {
     height : 100px;
@@ -59,7 +70,6 @@ div#header-menu {
 div#header-menu a {
     color : #646464;
     margin : 0 5px 0 5px;
-    text-decoration : none;
 }
 
 div#header-menu a:hover {
@@ -69,6 +79,8 @@ div#header-menu a:hover {
 div.content {
     padding : 10px 0 10px 0;
 }
+
+/* Home elements */
 
 div#floating-island {
     background : url(resources/images/floating-island.jpg) no-repeat;
@@ -88,19 +100,38 @@ div.updates-block {
     background-color : #eeeeee;
     border : 1px solid #969696;
     border-radius : 5px 5px 5px 5px;
-    box-shadow : rgba(0,0,0, 0.1) 0px 0px 8px;
+    box-shadow : rgba(0,0,0, 0.25) 0px 0px 8px;
     margin : 10px 0 0 0;
     padding : 10px 10px 10px 10px;
     text-shadow : 0 1px 0 #ffffff;
 
     -moz-border-radius : 5px 5px 5px 5px;
-    -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
-    -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+    -moz-box-shadow : rgba(0,0,0, 0.25) 0px 0px 5px;
+    -webkit-box-shadow : rgba(0,0,0, 0.25) 0px 0px 5px;
 }
 
 div.updates-block b {
     font-size : 18px;
 }
+
+/* Map (add issue) */
+
+div#map-add-issue {
+    border : 1px solid #eeeeee;
+    border-radius : 5px 5px 5px 5px;
+    float : left;
+    height : 343px;
+    margin : 50px 0 50px 0;
+    padding : 10px 10px 10px 10px;
+    width : 450px;
+}
+
+div#map-add-issue-container {
+    height : 343px;
+    width : 450px;
+}
+
+/* Footer */
 
 div#footer {
     background : url(resources/images/bg-bottom-x.jpg) repeat-x;
@@ -114,7 +145,7 @@ div#footer-top {
 }
 
 div#footer-top div.content {
-    padding-top : 35px;
+    padding-top : 40px;
 }
 
 div#footer p {
@@ -124,6 +155,7 @@ div#footer p {
 
 div#footer-top-links {
     float : right;
+    text-align : right;
     width : 240px;
 }
 
@@ -140,7 +172,6 @@ div#footer-bottom {
 
 div#footer a {
     color : #88da0e;
-    text-decoration : none;
 }
 
 div#footer a:hover {
@@ -173,14 +204,19 @@ form h2 {
     margin : 0 0 10px 0;
 }
 
-input[type=text], input[type=password] {
+form#add-issue {
+    float : right;
+    margin : 50px 0 50px 0;
+}
+
+input[type=text], input[type=password], textarea {
     border : 1px solid #eeeeee;
     border-radius : 5px 5px 5px 5px;
     color : #969696;
     display : block;
     margin : 10px 0 20px 0;
     padding : 5px 5px 5px 5px;
-    width : 380px;
+    width : 385px;
 }
 
 .notice {
