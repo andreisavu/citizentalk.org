@@ -8,6 +8,7 @@
 {% for institution in institutions %}
   <li>
     {{ institution.title }}
+    [<a href="/institutions/edit?id={{institution.id}}">edit</a>]
   </li>
 {% endfor %}
 </ul>
