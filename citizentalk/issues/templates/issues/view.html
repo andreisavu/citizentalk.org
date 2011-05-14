@@ -16,7 +16,7 @@
     <br /><br />
     List of 5 institutions in charge sorted by the number of common tags.<br /><br />
     {% for inst in institutions %}
-        <b>{{ inst }}</b>
+        <b><a href="/institutions/{{ inst.id }}">{{ inst }}</a></b>
     {% endfor %}
     </div>
 
