@@ -12,9 +12,29 @@
     <script type="text/javascript">  
         var map = new YMap(document.getElementById('map-add-issue-container'));
 
-        map.addTypeControl();
-        map.setMapType(YAHOO_MAP_REG)
-        map.drawZoomAndCenter("San Francisco", 3);
+        function startMap() {
+            map.addTypeControl();
+            map.addZoomLong();
+            map.addPanControl();
+            map.setMapType(YAHOO_MAP_HYB);
+            map.drawZoomAndCenter("Romania", 12);
+
+            YEvent.Capture(map, EventsList.MouseClick, reportPosition);
+
+            function reportPosition(_e, _c) {
+                var mapCoordCenter = map.convertLatLonXY(map.getCenterLatLon());
+
+                YLog.initPos(mapCoordCenter);
+                YLog.print("Latitude: " + _c.Lat);
+                YLog.print("Longitute: " + _c.Lon);
+
+                var currentGeoPoint = new YGeoPoint(_c.Lat, _c.Lon);
+
+                map.addMarker(currentGeoPoint);
+            }
+        }
+
+        window.onload = startMap;
     </script>
 </div><!-- #map-add-issue- -->
 
