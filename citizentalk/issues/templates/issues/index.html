@@ -3,11 +3,21 @@
 
 {% block content %}
 
-<a href="/issues/new/">Add new issue</a><br />
+<a href="/issues/new/">Add new issue</a><br /><br />
 
+<table width="100%">
 {% for issue in issues %}
-    <h1>{{ issue.title }}</h1><br />
+<tr>
+    <td width="90%"><a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a></td>
+    <td>{{ issue.reporter.username }}</td>
+</tr>
+
+{% empty %}
+
+No issues in the database
+
 {% endfor %}
+</table>
 
 {% endblock %}
 

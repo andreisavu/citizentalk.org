@@ -1,4 +1,5 @@
-from django.shortcuts import render_to_response, redirect
+
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.http import Http404
 
@@ -13,6 +14,12 @@ def index(request):
         return list_issues(request)
     elif request.method == 'POST':
         return create(request)
+
+def view(request, id):
+    issue = get_object_or_404(Issue, pk=id)
+    return render_to_response('issues/view.html',
+        {'issue': issue},
+        context_instance = RequestContext(request))
 
 @login_required
 def new(request):
