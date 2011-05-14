@@ -2,9 +2,9 @@
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.http import Http404
-
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 from issues.models import Issue
 from issues.forms import CreateForm
@@ -49,7 +49,7 @@ def list_issues(request):
 
     all_issues = Issue.objects.order_by('created_at') 
     try:
-        paginator = Paginator(all_issues, 20)
+        paginator = Paginator(all_issues, settings.ITEMS_PER_PAGE)
         issues = paginator.page(page).object_list
     except (EmptyPage, InvalidPage):
         raise Http404
