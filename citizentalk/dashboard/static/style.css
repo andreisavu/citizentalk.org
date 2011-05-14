@@ -109,6 +109,10 @@ div#footer-top {
     height : 145px;
 }
 
+div#footer-top div.content {
+    padding-top : 35px;
+}
+
 div#footer p {
     float : left;
     width : 680px;
@@ -150,4 +154,23 @@ a#logo-footer {
 
 .clear {
     clear : both;
+}
+
+/* Forms */
+form {
+    border : 1px solid #eeeeee;
+    border-radius : 5px 5px 5px 5px;
+    margin : 50px auto 50px auto;
+    padding : 20px 20px 20px 20px;
+    width : 400px;
+}
+
+input[type=text], input[type=password] {
+    border : 1px solid #eeeeee;
+    border-radius : 5px 5px 5px 5px;
+    color : #969696;
+    display : block;
+    margin : 10px 0 20px 0;
+    padding : 5px 5px 5px 5px;
+    width : 380px;
 }
