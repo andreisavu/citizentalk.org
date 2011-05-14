@@ -13,8 +13,9 @@ def join(request):
     if request.method == 'POST':
         form = JoinForm(request.POST)
         if form.is_valid():
+            User.objects.create_user(form.cleaned_data['username'], 
+                form.cleaned_data['email'], form.cleaned_data['password1'])
             return redirect('/login')
-
     else:
         form =JoinForm()
 
