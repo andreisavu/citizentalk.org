@@ -12,6 +12,7 @@
                         <div id="header">
                                 <div id="header-menu">
                                 {% block menu %}
+                                        <a href="/">Home</a>
                                         <a href="/issues/explore/">Explore</a>
                                         {% if user.is_authenticated %}
                                             {% if user.is_superuser %}
