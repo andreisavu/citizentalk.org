@@ -12,9 +12,12 @@
     <br /><br />
     Add status changing buttons and voting button.
     <br /><br />
-    Maybe buttons fpor sharing on the main social networks.
+    Maybe buttons for sharing on the main social networks.
     <br /><br />
-    List of 5 institutions in charge sorted by the number of common tags.
+    List of 5 institutions in charge sorted by the number of common tags.<br /><br />
+    {% for inst in institutions %}
+        <b>{{ inst }}</b>
+    {% endfor %}
     </div>
 
     <div style="border: 1px solid black; margin: 20px; width: 300px; height: 300px;float: right"></div>

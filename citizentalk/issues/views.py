@@ -6,8 +6,11 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
+from tagging.models import Tag, TaggedItem
+
 from issues.models import Issue
 from issues.forms import CreateForm
+from institutions.models import Institution
 
 def index(request):
     if request.method == 'GET':
@@ -17,8 +20,11 @@ def index(request):
 
 def view(request, id):
     issue = get_object_or_404(Issue, pk=id)
+    institutions = TaggedItem.objects.get_by_model(\
+        Institution, issue.tags)[:5]
+
     return render_to_response('issues/view.html',
-        {'issue': issue},
+        {'issue': issue, 'institutions': institutions},
         context_instance = RequestContext(request))
 
 @login_required
