@@ -13,12 +13,20 @@ class Issue(models.Model):
         (u'res', u'Resolved'),
         (u'acc', u'Accepted')
     )
-    title = models.CharField(max_length=200)
+
+    title = models.CharField(max_length = 200)
     description = models.TextField()
-    state = models.CharField(max_length=3, choices=ISSUE_STATES)
-    attachments = models.ManyToManyField(Attachment)
+
+    state = models.CharField(max_length = 3, choices = ISSUE_STATES, default = 'new')
+
+    latitude = models.DecimalField(max_digits = 15, decimal_places = 10)
+    longitude = models.DecimalField(max_digits = 15, decimal_places = 10)
+    location = models.CharField(max_length = 200)
+
     created_at = models.DateTimeField('date created', auto_now_add = True)
     updated_at = models.DateTimeField('date updated', auto_now = True)
+
+    attachments = models.ManyToManyField(Attachment, blank = True)
 
 tagging.register(Issue)
 
