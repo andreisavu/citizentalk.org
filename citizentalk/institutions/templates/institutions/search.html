@@ -1,0 +1,16 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+
+<h1>Institutions</h1>
+
+<ul>
+{% for institution in institutions %}
+  <li>
+    {{ institution.title }}
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+
