@@ -10,9 +10,12 @@ urlpatterns = patterns('',
     # url(r'^$', 'citizentalk.views.home', name='home'),
     # url(r'^citizentalk/', include('citizentalk.foo.urls')),
 
-    url(r'^', include('citizentalk.dashboard.urls')),
-
+    url(r'^$', include('citizentalk.dashboard.urls')),
     url(r'^issues/', include('citizentalk.issues.urls')),
+
+    url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', 
+        {'next_page': '/'}, name='logout'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
