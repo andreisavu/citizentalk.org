@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'issues',
     'dashboard',
+    'tagging',
 )
 
 # A sample logging configuration. The only tangible logging
