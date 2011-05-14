@@ -1,14 +1,29 @@
+
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib import messages
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.conf import settings
 
 from models import Institution
 from forms import InstitutionForm
 
 def search(request):
-    results = Institution.objects.all()
+    try:
+        page = int(request.GET.get('page', '1'))
+    except (ValueError, TypeError):
+        page = 1
+
+    all_institutions = Institution.objects.all()
+    try:
+        institutions = Paginator(all_institutions, \
+            settings.ITEMS_PER_PAGE).page(page)
+    except (EmptyPage, InvalidPage):
+        raise Http404
+
     return render_to_response('institutions/search.html',
-        context_instance = RequestContext(request, {'institutions': results}))
+        context_instance = RequestContext(request, 
+            {'institutions': institutions}))
 
 def edit(request):
     institution = get_object_or_404(Institution, pk=request.GET['id'])
