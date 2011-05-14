@@ -1,9 +1,28 @@
 {% extends "base_layout.html" %}
 
 {% block content %}
+    <div style="float: left">
     <h1>{{ issue.title }}</h1>
 
     <p>{{ issue.description }}</p>
+
+    <br /><br />
+    Reporter: {{ issue.reporter }}
+
+    <br /><br />
+    Add status changing buttons and voting button.
+    <br /><br />
+    Maybe buttons fpor sharing on the main social networks.
+    <br /><br />
+    List of 5 institutions in charge sorted by the number of common tags.
+    </div>
+
+    <div style="border: 1px solid black; margin: 20px; width: 300px; height: 300px;float: right"></div>
+    <div style="clear: both"></div>
+
+    <hr style="margin-top: 50px;" />
+    Here should be comments! 
+    <br /><br /><br />
 
 {% endblock %}
 
