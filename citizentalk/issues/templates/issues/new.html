@@ -18,7 +18,7 @@
     </script>
 </div><!-- #map-add-issue- -->
 
-<form id="add-issue" method="post" action="/issues/new/">
+<form id="add-issue" method="post" action="/issues/">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Create Issue" />
