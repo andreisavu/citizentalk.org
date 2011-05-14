@@ -1,0 +1,18 @@
+[
+  {
+    "pk": 1, 
+    "model": "institutions.institution", 
+    "fields": {
+      "description": "", 
+      "title": "Prim\u0103ria Bucure\u0219ti"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "institutions.institution", 
+    "fields": {
+      "description": "", 
+      "title": "Prim\u0103ria sectorului 1"
+    }
+  }
+]
