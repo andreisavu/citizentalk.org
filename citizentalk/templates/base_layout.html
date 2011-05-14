@@ -1,23 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-		<title>{% block title %}CitizenTalk{% endblock %}</title>
-		<link href="/static/style.css" media="screen" rel="stylesheet" type="text/css" />
-		<link href="resources/js/" media="screen" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<div class="wrapper" id="top">
+        <head>
+                <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+                <title>{% block title %}CitizenTalk{% endblock %}</title>
+                <link href="/static/style.css" media="screen" rel="stylesheet" type="text/css" />
+                <link href="resources/js/" media="screen" rel="stylesheet" type="text/css" />
+        </head>
 
-            <div class="content">
-            {% block content %}{% endblock %}
-            </div>
-		</div><!-- .wrapper #top -->
+        <body>
+                <div class="wrapper" id="top">
+                        <div id="header">
+                                <div id="header-menu">
+                                        <a href="#">Example Link</a>
+                                        <a href="#">Example Link</a>
+                                        <a href="#">Example Link</a>
+                                </div><!-- #header-menu -->
 
-		<div id="footer">
-        {% block footer %}
-            
-        {% endblock %}
-		</div><!-- #footer -->
-	</body>
+                                <div class="clear">
+                                        <!-- -->
+                                </div> <!-- .clear -->
+                        </div><!-- header -->
+                        
+                        <div id="content">
+                                {% block content %}{% endblock %}
+                        </div><!-- #content -->
+                </div><!-- .wrapper #top -->
+
+                <div id="footer">
+                        <div class="wrapper">
+                                <div id="footer-top">
+                                        {% block footer %}{% endblock %}
+                                </div><!-- #footer-top -->
+
+                                <div id="footer-bottom">
+                                        Copyright &copy; 2011 - <a href="#">www.citizentalk.org</a>
+
+                                        <a href="#" id="logo-footer"></a>
+
+                                        <div class="clear">
+                                                <!-- -->
+                                        </div> <!-- .clear -->
+                                </div><!-- #footer-bottom -->
+                        </div><!-- .wrapper -->
+                </div><!-- #footer -->
+        </body>
 </html>

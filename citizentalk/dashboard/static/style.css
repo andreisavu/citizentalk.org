@@ -1,19 +1,93 @@
 * {
-	margin : 0;
-	outline : 0;
-	padding : 0;
+        margin : 0;
+        outline : 0;
+        padding : 0;
 }
 
 body {
-	background : #ffffff url(resources/images/bg-top-x.jpg) repeat-x;
+        background : #ffffff url(resources/images/bg-top-x.jpg) repeat-x;
+        color : #323232;
+        font-family : 'Verdana', 'Geneva', sans-serif;
+        font-size : 14px;
 }
 
 div.wrapper {
-	margin : 0 auto 0 auto;
-	padding : 0 20px 0 20px;
-	width : 1000px;
+        margin : 0 auto 0 auto;
+        padding : 0 20px 0 20px;
+        width : 1000px;
 }
 
 div#top {
-	background : url(resources/images/bg-top.jpg) no-repeat;
+        background : url(resources/images/bg-top.jpg) 0 -1px no-repeat;
+}
+
+div#header {
+        height : 100px;
+        width : 960px;
+}
+
+div#header-menu {
+        background-color : #ffffff;
+        border-radius : 5px 5px 5px 5px;
+        box-shadow : rgba(0,0,0, 0.1) 0px 0px 8px;
+        float : right;
+        padding : 5px 0 5px 0;
+        margin : 38px 0 0 0;
+
+        -moz-border-radius : 5px 5px 5px 5px;
+        -moz-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+        -webkit-box-shadow : rgba(0,0,0, 0.1) 0px 0px 5px;
+}
+
+div#header-menu a {
+        color : #646464;
+        margin : 0 5px 0 5px;
+        text-decoration : none;
+}
+
+div#header-menu a:hover {
+        color : #000000;
+}
+
+div#content {
+        height : 320px;
+}
+
+div#footer {
+        background : url(resources/images/bg-bottom-x.jpg) repeat-x;
+        color : #969696;
+        height : 200px;
+        width : 100%;
+}
+
+div#footer-top {
+        height : 145px;
+}
+
+div#footer-bottom {
+        line-height : 50px;
+        height : 50px;
+        margin : 5px 0 0 0;
+}
+
+div#footer a {
+        color : #88da0e;
+        text-decoration : none;
+}
+
+div#footer a:hover {
+        color : #ffffff;
+}
+
+a#logo-footer {
+        background : url(resources/images/logo-footer.jpg) no-repeat;
+        display : block;
+        float : right;
+        height : 25px;
+        margin : 13px 0 0 0;
+        width : 100px;
+}
+
+.clear {
+        clear : both;
 }
