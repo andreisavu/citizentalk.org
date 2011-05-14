@@ -11,9 +11,17 @@
                 <div class="wrapper" id="top">
                         <div id="header">
                                 <div id="header-menu">
-                                        <a href="#">Example Link</a>
-                                        <a href="#">Example Link</a>
-                                        <a href="#">Example Link</a>
+                                {% block menu %}
+                                        <a href="/issues/explore/">Explore</a>
+                                        {% if user.is_authenticated %}
+                                            {% if user.is_superuser %}
+                                                <a href="/admin/">Admin</a>
+                                            {% endif %}
+                                            <a href="/logout/">Sign out</a>
+                                        {% else %}
+                                            <a href="/login/">Sign in</a>
+                                        {% endif %}
+                                {% endblock %}
                                 </div><!-- #header-menu -->
 
                                 <div class="clear">
