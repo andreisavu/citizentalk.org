@@ -5,5 +5,6 @@ import views
 
 urlpatterns = patterns('',
     url(r'^$', views.search, name='institutions-index'),
+    url(r'^edit$', views.edit, name='institutions-edit'),
 )
 
