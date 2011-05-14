@@ -4,7 +4,10 @@ from tagging.fields import TagField
 
 class Attachment(models.Model):
     file = models.FileField(upload_to='file/%Y/%m/%d')
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.title
 
 class Issue(models.Model):
     ISSUE_STATES = (
@@ -27,6 +30,9 @@ class Issue(models.Model):
     updated_at = models.DateTimeField('date updated', auto_now = True)
 
     attachments = models.ManyToManyField(Attachment, blank = True)
+
+    def __unicode__(self):
+        return self.title
 
 tagging.register(Issue)
 
