@@ -1,0 +1,36 @@
+[
+  {
+    "pk": 1, 
+    "model": "issues.issue", 
+    "fields": {
+      "tags": "", 
+      "description": "My shrubbery does not compile!", 
+      "title": "Defective shrubbery", 
+      "created_at": "2011-05-14 19:02:55", 
+      "reporter": 1, 
+      "updated_at": "2011-05-14 19:02:55", 
+      "longitude": "26.090058", 
+      "state": "new", 
+      "location": "", 
+      "latitude": "44.427946", 
+      "attachments": []
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "issues.issue", 
+    "fields": {
+      "tags": "", 
+      "description": "My lawn is overgrown :(", 
+      "title": "Lawn needs mowing", 
+      "created_at": "2011-05-14 19:03:51", 
+      "reporter": 1, 
+      "updated_at": "2011-05-14 19:03:51", 
+      "longitude": "26.07", 
+      "state": "new", 
+      "location": "", 
+      "latitude": "44.43", 
+      "attachments": []
+    }
+  }
+]
