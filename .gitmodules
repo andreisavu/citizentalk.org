@@ -1,0 +1,3 @@
+[submodule "django-tagging-ng"]
+	path = django-tagging-ng
+	url = git://github.com/svetlyak40wt/django-tagging-ng.git
