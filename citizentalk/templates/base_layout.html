@@ -14,7 +14,11 @@
                                 {% block menu %}
                                         <a href="/issues/explore/">Explore</a>
                                         <a href="/register/">Register</a>
-                                        <a href="/login/">Sign in</a>
+                                        {% if user.is_authenticated %}
+                                            <a href="/logout/">Sign out</a>
+                                        {% else %}
+                                            <a href="/login/">Sign in</a>
+                                        {% endif %}
                                 {% endblock %}
                                 </div><!-- #header-menu -->
 
