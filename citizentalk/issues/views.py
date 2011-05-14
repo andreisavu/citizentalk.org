@@ -49,13 +49,12 @@ def list_issues(request):
 
     all_issues = Issue.objects.order_by('created_at') 
     try:
-        paginator = Paginator(all_issues, settings.ITEMS_PER_PAGE)
-        issues = paginator.page(page).object_list
+        issues = Paginator(all_issues, settings.ITEMS_PER_PAGE).page(page)
     except (EmptyPage, InvalidPage):
         raise Http404
 
     return render_to_response('issues/index.html',
-        {'paginator': paginator, 'issues': issues},
+        {'issues': issues},
         context_instance = RequestContext(request))
 
 def create_issue(request):

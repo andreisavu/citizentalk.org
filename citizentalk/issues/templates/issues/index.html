@@ -6,7 +6,7 @@
 <a href="/issues/new/">Add new issue</a><br /><br />
 
 <table width="100%">
-{% for issue in issues %}
+{% for issue in issues.object_list %}
 <tr>
     <td width="90%"><a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a></td>
     <td>{{ issue.reporter.username }}</td>
@@ -18,6 +18,22 @@ No issues in the database
 
 {% endfor %}
 </table>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if issues.has_previous %}
+            <a href="?page={{ issues.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ issues.number }} of {{ issues.paginator.num_pages }}.
+        </span>
+
+        {% if issues.has_next %}
+            <a href="?page={{ issues.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>
 
 {% endblock %}
 
