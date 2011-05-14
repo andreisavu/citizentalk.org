@@ -6,7 +6,6 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.conf import settings
 
 from models import Institution
-from forms import InstitutionForm
 
 def search(request):
     try:
@@ -24,22 +23,6 @@ def search(request):
     return render_to_response('institutions/search.html',
         context_instance = RequestContext(request, 
             {'institutions': institutions}))
-
-def edit(request):
-    institution = get_object_or_404(Institution, pk=request.GET['id'])
-
-    if request.POST:
-        form = InstitutionForm(request.POST, instance=institution)
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.INFO,
-                                 "%s saved." % institution.title)
-
-    else:
-        form = InstitutionForm(instance=institution)
-
-    return render_to_response('institutions/edit.html',
-        context_instance = RequestContext(request, {'form': form}))
 
 def view(request, id):
     institution = get_object_or_404(Institution, pk=id)
