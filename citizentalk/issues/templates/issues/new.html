@@ -23,14 +23,12 @@
 
             function reportPosition(_e, _c) {
                 var mapCoordCenter = map.convertLatLonXY(map.getCenterLatLon());
-
-                YLog.initPos(mapCoordCenter);
-                YLog.print("Latitude: " + _c.Lat);
-                YLog.print("Longitute: " + _c.Lon);
-
                 var currentGeoPoint = new YGeoPoint(_c.Lat, _c.Lon);
 
+                map.removeMarkersAll();
                 map.addMarker(currentGeoPoint);
+                document.getElementById('id_latitude').value=_c.Lat;
+                document.getElementById('id_longitude').value=_c.Lon;
             }
         }
 
