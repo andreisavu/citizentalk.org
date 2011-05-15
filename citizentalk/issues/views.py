@@ -53,7 +53,7 @@ def list_issues(request):
     except (ValueError, TypeError):
         page = 1
 
-    all_issues = Issue.objects.order_by('created_at') 
+    all_issues = Issue.objects.order_by('-created_at') 
     try:
         issues = Paginator(all_issues, settings.ITEMS_PER_PAGE).page(page)
     except (EmptyPage, InvalidPage):
