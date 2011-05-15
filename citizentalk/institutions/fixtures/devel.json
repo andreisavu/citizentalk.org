@@ -1,6 +1,22 @@
 [
   {
     "pk": 1, 
+    "model": "institutions.publicperson", 
+    "fields": {
+      "name": "Gigi \u0218p\u0103garu'", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "institutions.publicperson", 
+    "fields": {
+      "name": "Bebe Pe\u0219che\u0219", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "institutions.institution", 
     "fields": {
       "tags": "", 
@@ -15,6 +31,16 @@
       "tags": "", 
       "description": "", 
       "title": "Prim\u0103ria sectorului 1"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "institutions.holdingoffice", 
+    "fields": {
+      "person": 1, 
+      "institution": 1, 
+      "end_date": null, 
+      "start_date": "2010-10-12"
     }
   }
 ]
