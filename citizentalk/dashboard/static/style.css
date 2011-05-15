@@ -284,3 +284,28 @@ td.issue-title {
 td.issue-user {
     text-align : center;
 }
+
+#attachments {
+    width: 450px;
+    padding: 10px;
+    float: right;
+}
+
+#comments {
+    width: 450px;
+    float: left;
+}
+
+#comments form {
+    width: auto !important;
+    margin: 0px;
+}
+
+#issue-attachments {
+    list-style: none;
+}
+
+#add-issue-attachment {
+    margin: 0px;
+    padding: .5em;
+}

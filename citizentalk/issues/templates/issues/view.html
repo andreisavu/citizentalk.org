@@ -20,7 +20,7 @@
     Add status changing buttons and voting button.
     <br /><br />
 
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="citizentalk">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="citizentalk">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
     <br /><br />
     Institutions in charge<br />
@@ -29,46 +29,48 @@
     {% endfor %}
 </div><!-- #view-issue-content -->
 
-        <div id="map-view-issue">
-        <div id="map-view-issue-container">
-            <!-- -->
-        </div><!-- #map-view-issue-container -->
-
-    <script type="text/javascript" src="http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=A89ep3fV34E7xmR7phcrGoALC_7by21vdTDllAAXHkWIT6ON_iQJbI6LOCndWbN0"></script>
-
-    <script type="text/javascript">  
-        var map = new YMap(document.getElementById('map-view-issue-container'));
-        var currentGeoPoint = new YGeoPoint({{ issue.latitude }}, {{ issue.longitude }});
-
-        map.addTypeControl();
-        map.addZoomLong();
-        map.addPanControl();
-        map.setMapType(YAHOO_MAP_HYB);
-        map.drawZoomAndCenter(currentGeoPoint, 3);
-        map.addMarker(currentGeoPoint);
-    </script>
-    </div><!-- map-view-issue -->
-
-    <div class="clear">
+<div id="map-view-issue">
+    <div id="map-view-issue-container">
         <!-- -->
-    </div><!-- .clear -->
-    <div>
-        <ul id="issue-attachments">
-            {% for attachment in issue_attachments %}
-                <li>
-                    <a href="/media/{{ attachment.file.url }}">{{ attachment.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+    </div><!-- #map-view-issue-container -->
 
-        <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
-            <legend>Add a new attachment</legend>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Add" />
-        </form>
-    </div>
+<script type="text/javascript" src="http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=A89ep3fV34E7xmR7phcrGoALC_7by21vdTDllAAXHkWIT6ON_iQJbI6LOCndWbN0"></script>
 
+<script type="text/javascript">  
+    var map = new YMap(document.getElementById('map-view-issue-container'));
+    var currentGeoPoint = new YGeoPoint({{ issue.latitude }}, {{ issue.longitude }});
+
+    map.addTypeControl();
+    map.addZoomLong();
+    map.addPanControl();
+    map.setMapType(YAHOO_MAP_HYB);
+    map.drawZoomAndCenter(currentGeoPoint, 3);
+    map.addMarker(currentGeoPoint);
+</script>
+</div><!-- map-view-issue -->
+
+<div class="clear">
+    <!-- -->
+</div><!-- .clear -->
+
+<div id="attachments">
+    <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
+        <legend>Add a new attachment</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add" />
+    </form>
+
+    <ul id="issue-attachments">
+        {% for attachment in issue_attachments %}
+            <li>
+                <a href="/media/{{ attachment.file.url }}">{{ attachment.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div id="comments">
     {% render_comment_list for issue %}
 
     <form method="post" action="/issues/comment/new/" style="width: 100%">
@@ -77,5 +79,10 @@
         <textarea name="content" style="width: 100%" rows="10"></textarea>
         <input type="submit" value="Post Comment" />
     </form>
+</div>
+
+<div class="clear">
+    <!-- -->
+</div><!-- .clear -->
 
 {% endblock %}
