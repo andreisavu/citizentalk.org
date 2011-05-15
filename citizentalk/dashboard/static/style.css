@@ -203,6 +203,25 @@ a#logo-footer {
     clear : both;
 }
 
+/* New issue button */
+
+a#add-new-issue-button {
+    background-color : #88da0e;
+    border : 1px solid #668822;
+    border-radius : 5px 5px 5px 5px;
+    color : #323232;
+    display : inline-block;
+    text-shadow : 0 1px 0 #ddffaa;
+    font-size : 18px;
+    font-weight : bold;
+    line-height : 40px;
+    padding : 0 10px 0 10px;
+}
+
+a#add-new-issue-button:hover {
+    background-color : #99ea1e;
+}
+
 /* Forms */
 form {
     border : 1px solid #eeeeee;
