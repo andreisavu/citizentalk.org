@@ -82,6 +82,7 @@ div.content {
 
 div#view-issue-content {
     float : left;
+    margin : 50px 0 50px 0;
     width : 450px;
 }
 
@@ -316,7 +317,7 @@ td.issue-user {
 }
 
 #comments {
-    width: 450px;
+    width: 440px;
     float: left;
 }
 
@@ -332,4 +333,24 @@ td.issue-user {
 #add-issue-attachment {
     margin: 0px;
     padding: .5em;
+}
+
+dl#comments dt {
+    border : 1px solid #eeeeee;
+    border-radius : 5px 5px 0 0;
+    border-bottom : none;
+    color : #969696;
+    font-size : 12px;
+    padding : 20px 20px 10px 20px;
+    width : 400px;
+    text-align : right;
+}
+
+dl#comments dd {
+    border : 1px solid #eeeeee;
+    border-radius : 0 0 5px 5px;
+    border-top : none;
+    padding : 0 20px 20px 20px;
+    width : 400px;
+    margin : 0 0 20px 0;
 }
