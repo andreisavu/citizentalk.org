@@ -44,8 +44,7 @@
         map.addZoomLong();
         map.addPanControl();
         map.setMapType(YAHOO_MAP_HYB);
-        map.drawZoomAndCenter(currentGeoPoint, 12);
-
+        map.drawZoomAndCenter(currentGeoPoint, 3);
         map.addMarker(currentGeoPoint);
     </script>
     </div><!-- map-view-issue -->
@@ -53,6 +52,22 @@
     <div class="clear">
         <!-- -->
     </div><!-- .clear -->
+    <div>
+        <ul id="issue-attachments">
+            {% for attachment in issue_attachments %}
+                <li>
+                    <a href="/media/{{ attachment.file.url }}">{{ attachment.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
+            <legend>Add a new attachment</legend>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add" />
+        </form>
+    </div>
 
     {% render_comment_list for issue %}
 
