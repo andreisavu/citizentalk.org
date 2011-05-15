@@ -5,11 +5,11 @@
 
 <a href="/issues/new/">Add new issue</a><br /><br />
 
-<table width="100%">
+<table cellspacing="0" cellpadding="0" width="100%" id="issues">
 {% for issue in issues.object_list %}
 <tr>
-    <td width="90%"><a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a></td>
-    <td>{{ issue.reporter.username }}</td>
+    <td class="issue-title" width="90%"><a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a></td>
+    <td class="issue-user">{{ issue.reporter.username }}</td>
 </tr>
 
 {% empty %}

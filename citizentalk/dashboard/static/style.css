@@ -257,3 +257,30 @@ ul.errorlist li {
     font-size : 12px;
     margin : 0 0 5px 0;
 }
+
+/* Issues table */
+table#issues {
+    border-collapse : collapse;
+}
+
+table#issues tr {
+    background-color : #fafafa;
+    text-shadow : 0 1px 0 #ffffff;
+}
+
+table#issues tr:hover {
+    background-color : #ffffff;
+}
+
+table#issues td {
+    border : 1px solid #eeeeee;
+    padding : 10px;
+}
+
+td.issue-title {
+    font-size : 16px;
+}
+
+td.issue-user {
+    text-align : center;
+}
