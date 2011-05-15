@@ -54,20 +54,22 @@
 </div><!-- .clear -->
 
 <div id="attachments">
+    <ul id="issue-attachments">
+        {% for attachment in issue_attachments %}
+            <li>
+                <a href="/media/{{ attachment.file.url }}">
+                    <img src="/media/{{ attachment.file.url }}" title="{{ attachment.title }}" alt="{{ attachment.title }}"/>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
     <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
         <legend>Add a new attachment</legend>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Add" />
     </form>
-
-    <ul id="issue-attachments">
-        {% for attachment in issue_attachments %}
-            <li>
-                <a href="/media/{{ attachment.file.url }}">{{ attachment.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
 </div>
 
 <div id="comments">
