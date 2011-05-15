@@ -19,6 +19,8 @@ urlpatterns = patterns('',
         {'next_page': '/'}, name='logout'),
     url('^join/$', 'profiles.views.join', name='profiles-join'),
 
+    # Use django comments framework
+    url(r'^comments/', include('django.contrib.comments.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

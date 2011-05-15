@@ -1,9 +1,16 @@
 {% extends "base_layout.html" %}
 
+{% load comments %}
+
+{% block title %}CitizenTalk - {{ issue.title }}{% endblock %}
+
 {% block content %}
+    {% get_comment_count for issue as comment_count %}
+
     <div style="float: left">
     <h1>{{ issue.title }}</h1>
 
+    <br />
     <p>{{ issue.description }}</p>
 
     <br /><br />
@@ -12,20 +19,26 @@
     <br /><br />
     Add status changing buttons and voting button.
     <br /><br />
-    Maybe buttons for sharing on the main social networks.
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="citizentalk">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
     <br /><br />
-    List of 5 institutions in charge sorted by the number of common tags.<br /><br />
+    Institutions in charge<br />
     {% for inst in institutions %}
         <b><a href="/institutions/{{ inst.id }}">{{ inst }}</a></b>
     {% endfor %}
     </div>
 
     <div style="border: 1px solid black; margin: 20px; width: 300px; height: 300px;float: right"></div>
-    <div style="clear: both"></div>
+    <div style="clear: both;margin-top: 10px;"></div>
 
-    <hr style="margin-top: 50px;" />
-    Here should be comments! 
-    <br /><br /><br />
+    {% render_comment_list for issue %}
+
+    <form method="post" action="/issues/comment/new/" style="width: 100%">
+        <input type="hidden" name="issue_id" value="{{ issue.id }}" />
+        <textarea style="width: 100%" rows="10"></textarea>
+        <input type="submit" value="Post Comment" />
+    </form>
 
 {% endblock %}
 
