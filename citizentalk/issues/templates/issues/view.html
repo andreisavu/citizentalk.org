@@ -52,6 +52,18 @@
     <div class="clear">
         <!-- -->
     </div><!-- .clear -->
+    <ul>
+        {% for attachment in issue_attachments %}
+            <li>
+                <a href="{{ attachment.file.url }}">{{ issue.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form action="/issues/view/{{ issue.id }}/attachments">
+        
+    </form>
+
 
     {% render_comment_list for issue %}
 

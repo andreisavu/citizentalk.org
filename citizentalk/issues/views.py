@@ -2,6 +2,7 @@
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.template import RequestContext
 from django.http import Http404
+
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -20,11 +21,12 @@ def index(request):
 
 def view(request, id):
     issue = get_object_or_404(Issue, pk=id)
-    institutions = TaggedItem.objects.get_by_model(\
-        Institution, issue.tags)[:5]
+    issue_attachments = issue.attachments.all()
+    institutions = TaggedItem.objects.get_by_model(Institution, issue.tags)[:5]
 
     return render_to_response('issues/view.html',
-        {'issue': issue, 'institutions': institutions},
+        {'issue': issue, 'issue_attachments': issue_attachments,
+        'institutions': institutions },
         context_instance = RequestContext(request))
 
 @login_required
