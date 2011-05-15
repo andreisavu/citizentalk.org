@@ -80,6 +80,11 @@ div.content {
     padding : 10px 0 10px 0;
 }
 
+div#view-issue-content {
+    float : left;
+    width : 450px;
+}
+
 /* Home elements */
 
 div#floating-island {
@@ -114,19 +119,26 @@ div.updates-block b {
     font-size : 18px;
 }
 
-/* Map (add issue) */
+/* Maps */
 
-div#map-add-issue {
+div#map-add-issue, div#map-view-issue {
     border : 1px solid #eeeeee;
     border-radius : 5px 5px 5px 5px;
-    float : left;
     height : 360px;
     margin : 50px 0 50px 0;
     padding : 10px 10px 10px 10px;
     width : 450px;
 }
 
-div#map-add-issue-container {
+div#map-add-issue {
+    float : left;
+}
+
+div#map-view-issue {
+    float : right;
+}
+
+div#map-add-issue-container, div#map-view-issue-container {
     height : 360px;
     width : 450px;
 }
@@ -214,6 +226,7 @@ input[type=text], input[type=password], textarea {
     border-radius : 5px 5px 5px 5px;
     color : #969696;
     display : block;
+    font-size : 14px;
     margin : 10px 0 20px 0;
     padding : 5px 5px 5px 5px;
     width : 385px;
