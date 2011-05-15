@@ -64,7 +64,9 @@
     <ul id="issue-attachments">
         {% for attachment in issue_attachments %}
             <li>
-                <a href="/media/{{ attachment.file.url }}">{{ attachment.title }}</a>
+                <a href="{{ STATIC_URL }}{{ attachment.file.url }}">
+                    <img src="{{ STATIC_URL }}{{ attachment.file.url }}" title="{{ attachment.title }}" alt="{{ attachment.title }}"/>
+                </a>
             </li>
         {% endfor %}
     </ul>

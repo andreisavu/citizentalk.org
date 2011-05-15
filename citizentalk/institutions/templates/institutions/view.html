@@ -10,14 +10,37 @@
 
 <div class="description">{{ institution.description }}</div>
 
-{% if issues %}
-<ul>
-{% for issue in issues %}
-  <li>
-    <a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a>
-  </li>
+<table cellspacing="0" cellpadding="0" width="100%" id="issues">
+{% for issue in issues.object_list %}
+<tr>
+    <td class="issue-title" width="90%">
+        <a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a>
+        - {{ issue.created_at }}
+    </td>
+    <td class="issue-user">{{ issue.reporter.username }}</td>
+</tr>
+
+{% empty %}
+
+No issues in the database
+
 {% endfor %}
-</ul>
-{% endif %}
+</table>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if issues.has_previous %}
+            <a href="?page={{ issues.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ issues.number }} of {{ issues.paginator.num_pages }}.
+        </span>
+
+        {% if issues.has_next %}
+            <a href="?page={{ issues.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>
 
 {% endblock %}
