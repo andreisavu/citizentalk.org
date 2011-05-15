@@ -335,6 +335,26 @@ td.issue-user {
     margin: 0px;
 }
 
+#issue-attachments li {
+    border : 1px solid #eeeeee;
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding: 3px;
+    margin: 3px;
+    overflow: hidden;
+}
+
+#issue-attachments li img {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#issue-attachments li {
+    width: 30px;
+    height: 30px;
+}
+
 #add-issue-attachment {
     border: none;
 }
