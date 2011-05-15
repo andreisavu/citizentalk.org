@@ -52,17 +52,6 @@
     <div class="clear">
         <!-- -->
     </div><!-- .clear -->
-    <ul>
-        {% for attachment in issue_attachments %}
-            <li>
-                <a href="{{ attachment.file.url }}">{{ issue.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-
-    <form action="/issues/view/{{ issue.id }}/attachments">
-        
-    </form>
     <div>
         <ul id="issue-attachments">
             {% for attachment in issue_attachments %}
