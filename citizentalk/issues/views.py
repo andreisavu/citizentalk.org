@@ -9,8 +9,8 @@ from django.conf import settings
 
 from tagging.models import Tag, TaggedItem
 
-from issues.models import Issue
-from issues.forms import CreateForm
+from issues.models import Issue, Attachment
+from issues.forms import CreateForm, CreateAttachmentForm
 from institutions.models import Institution
 
 def index(request):
@@ -23,10 +23,11 @@ def view(request, id):
     issue = get_object_or_404(Issue, pk=id)
     issue_attachments = issue.attachments.all()
     institutions = TaggedItem.objects.get_by_model(Institution, issue.tags)[:5]
+    attachment_form = CreateAttachmentForm()
 
     return render_to_response('issues/view.html',
         {'issue': issue, 'issue_attachments': issue_attachments,
-        'institutions': institutions },
+        'institutions': institutions, 'form': attachment_form },
         context_instance = RequestContext(request))
 
 @login_required
@@ -49,6 +50,24 @@ def create(request):
             {'form': form},
             context_instance = RequestContext(request))
 
+@login_required
+def add_attachment(request, id):
+    issue = get_object_or_404(Issue, pk=id)
+    issue_attachments = issue.attachments.all()
+    institutions = TaggedItem.objects.get_by_model(Institution, issue.tags)[:5]
+    attachment_form = CreateAttachmentForm(request.POST, request.FILES)
+
+    if attachment_form.is_valid():
+        attachment = create_attachment(request, issue)
+        attachment.save()
+        return redirect('/issues/view/' + str(issue.id))
+    else:
+        return render_to_response('issues/view.html',
+            {'issue': issue, 'issue_attachments': issue_attachments,
+            'institutions': institutions, 'form': attachment_form },
+            context_instance = RequestContext(request))
+    
+
 def list_issues(request):
     try:
         page = int(request.GET.get('page','1'))
@@ -64,6 +83,10 @@ def list_issues(request):
     return render_to_response('issues/index.html',
         {'issues': issues},
         context_instance = RequestContext(request))
+
+def create_attachment(request, issue):
+    return issue.attachments.create(title = request.POST['title'],
+        file = request.FILES['file'])
 
 def create_issue(request):
     return Issue(title = request.POST['title'],

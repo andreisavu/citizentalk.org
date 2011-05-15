@@ -1,6 +1,6 @@
 
 from django import forms
-from issues.models import Issue
+from issues.models import Issue, Attachment
 
 class CreateForm(forms.Form):
     title = forms.CharField(required=True)
@@ -16,3 +16,7 @@ class CreateForm(forms.Form):
         if tags and u':' in tags:
             raise forms.ValidationError("Colons are not allowed in the "
                                     "tags field")
+
+class CreateAttachmentForm(forms.Form):
+    title = forms.CharField(required=True)
+    file = forms.FileField(required=True)
