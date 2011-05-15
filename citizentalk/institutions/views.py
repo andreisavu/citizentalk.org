@@ -8,7 +8,7 @@ from django.conf import settings
 from tagging.models import TaggedItem
 from citizentalk.issues.models import Issue
 
-from models import Institution
+from models import Institution, HoldingOffice
 
 def search(request):
     try:
@@ -37,8 +37,16 @@ def view(request, id):
     else:
         issues = []
 
+    people_in_office = HoldingOffice.objects.filter(institution=institution,
+                                                    end_date=None)
+    if people_in_office:
+        person_in_office = people_in_office[0].person
+    else:
+        person_in_office = None
+
     return render_to_response('institutions/view.html',
         context_instance=RequestContext(request, {
             'institution': institution,
             'issues': issues,
+            'person_in_office': person_in_office,
         }))
