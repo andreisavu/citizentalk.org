@@ -9,21 +9,17 @@
 
 <div id="view-issue-content">
     <h1>{{ issue.title }}</h1>
+    <small>reported by  {{ issue.reporter }} on  {{ issue.created_at }}</small>
 
-    <br />
+    <br /><br />
     <p>{{ issue.description }}</p>
 
-    <br /><br />
-    Reporter: {{ issue.reporter }}
-
-    <br /><br />
-    Add status changing buttons and voting button.
     <br /><br />
 
     <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="citizentalk">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
     <br /><br />
-    Institutions in charge<br />
+    Institutions in charge:<br />
     {% for inst in institutions %}
         <b><a href="/institutions/{{ inst.id }}">{{ inst }}</a></b>
     {% endfor %}
