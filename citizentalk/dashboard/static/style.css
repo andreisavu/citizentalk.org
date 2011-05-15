@@ -120,14 +120,14 @@ div#map-add-issue {
     border : 1px solid #eeeeee;
     border-radius : 5px 5px 5px 5px;
     float : left;
-    height : 343px;
+    height : 360px;
     margin : 50px 0 50px 0;
     padding : 10px 10px 10px 10px;
     width : 450px;
 }
 
 div#map-add-issue-container {
-    height : 343px;
+    height : 360px;
     width : 450px;
 }
 
