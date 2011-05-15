@@ -22,7 +22,6 @@
             YEvent.Capture(map, EventsList.MouseClick, reportPosition);
 
             function reportPosition(_e, _c) {
-                var mapCoordCenter = map.convertLatLonXY(map.getCenterLatLon());
                 var currentGeoPoint = new YGeoPoint(_c.Lat, _c.Lon);
 
                 map.removeMarkersAll();
