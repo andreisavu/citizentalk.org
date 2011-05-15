@@ -2,15 +2,17 @@
 
 {% block content %}
 
-<h1>Institutions</h1>
+<br />
 
-<ul>
+<table celspacing="0" cellpadding="0" width="100%" id="issues">
 {% for institution in institutions.object_list %}
-  <li>
-    <a href="/institutions/{{ institution.id }}">{{ institution.title }}</a>
-  </li>
+<tr>
+    <td class="issue-title" width="90%">
+        <a href="/institutions/{{ institution.id }}">{{ institution.title }}</a>
+    </td>
+</tr>
 {% endfor %}
-</ul>
+</table>
 
 <br />
 <div class="pagination">
