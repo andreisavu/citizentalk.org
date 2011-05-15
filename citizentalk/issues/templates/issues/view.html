@@ -54,6 +54,13 @@
 </div><!-- .clear -->
 
 <div id="attachments">
+    <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br />
+        <input type="submit" value="Attach file" />
+    </form>
+
     <ul id="issue-attachments">
         {% for attachment in issue_attachments %}
             <li>
@@ -63,22 +70,19 @@
             </li>
         {% endfor %}
     </ul>
-
-    <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
-        <legend>Add a new attachment</legend>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add" />
-    </form>
 </div>
 
-<div id="comments">
     {% render_comment_list for issue %}
 
-    <form method="post" action="/issues/comment/new/" style="width: 100%">
+<div class="clear">
+    <!-- -->
+</div><!-- .clear -->
+
+<div id="comments" style="margin-bottom : 50px;">
+    <form method="post" action="/issues/comment/new/">
         {% csrf_token %}
         <input type="hidden" name="issue_id" value="{{ issue.id }}" />
-        <textarea name="content" style="width: 100%" rows="10"></textarea>
+        <textarea name="content" style="width: 385px" rows="5"></textarea>
         <input type="submit" value="Post Comment" />
     </form>
 </div>
