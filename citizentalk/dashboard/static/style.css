@@ -337,8 +337,8 @@ td.issue-user {
 
 #issue-attachments li {
     border : 1px solid #eeeeee;
-    width: 30px;
-    height: 30px;
+    width: 90px;
+    height: 90px;
     float: left;
     padding: 3px;
     margin: 3px;
@@ -346,13 +346,8 @@ td.issue-user {
 }
 
 #issue-attachments li img {
-    max-width: 30px;
-    max-height: 30px;
-}
-
-#issue-attachments li {
-    width: 30px;
-    height: 30px;
+    max-width: 90px;
+    max-height: 90px;
 }
 
 #add-issue-attachment {
