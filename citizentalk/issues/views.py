@@ -31,6 +31,13 @@ def view(request, id):
         'institutions': institutions, 'form': attachment_form },
         context_instance = RequestContext(request))
 
+def toggle_status(request):
+    if request.method == 'POST':
+        issue = get_object_or_404(Issue, pk=request.POST['issue_id'])
+        issue.state = u'res' if issue.state == u'ass' else u'ass'
+        issue.save()
+        return redirect('/issues/view/%d' % issue.id)
+
 @login_required
 def add_comment(request):
     if request.method == 'POST':
