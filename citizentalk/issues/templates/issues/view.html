@@ -50,12 +50,14 @@
 </div><!-- .clear -->
 
 <div id="attachments">
+    {% if user.is_authenticated %}
     <form id="add-issue-attachment" action="/issues/view/{{ issue.id }}/attachments" enctype="multipart/form-data" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <br />
         <input type="submit" value="Attach file" />
     </form>
+    {% endif %}
 
     <ul id="issue-attachments">
         {% for attachment in issue_attachments %}
@@ -64,6 +66,8 @@
                     <img src="/media/{{ attachment.file.url }}" title="{{ attachment.title }}" alt="{{ attachment.title }}"/>
                 </a>
             </li>
+        {% empty %}
+        This issue has no attachments.
         {% endfor %}
     </ul>
 </div>
@@ -74,6 +78,7 @@
     <!-- -->
 </div><!-- .clear -->
 
+{% if user.is_authenticated %}
 <div id="comments" style="margin-bottom : 50px;">
     <form method="post" action="/issues/comment/new/">
         {% csrf_token %}
@@ -82,6 +87,7 @@
         <input type="submit" value="Post Comment" />
     </form>
 </div>
+{% endif %}
 
 <div class="clear">
     <!-- -->
