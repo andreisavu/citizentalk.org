@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.conf import settings
 
+from tagging.models import TaggedItem
+from citizentalk.issues.models import Issue
+
 from models import Institution
 
 def search(request):
@@ -26,5 +29,16 @@ def search(request):
 
 def view(request, id):
     institution = get_object_or_404(Institution, pk=id)
+    print 
+    for tag in institution.tags.split():
+        if tag.startswith('location:'):
+            issues = TaggedItem.objects.get_by_model(Issue, tag)
+            break
+    else:
+        issues = []
+
     return render_to_response('institutions/view.html',
-        context_instance=RequestContext(request, {'institution': institution}))
+        context_instance=RequestContext(request, {
+            'institution': institution,
+            'issues': issues,
+        }))

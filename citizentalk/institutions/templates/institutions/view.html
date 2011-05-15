@@ -6,4 +6,14 @@
 
 <div class="description">{{ institution.description }}</div>
 
+{% if issues %}
+<ul>
+{% for issue in issues %}
+  <li>
+    <a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
 {% endblock %}
