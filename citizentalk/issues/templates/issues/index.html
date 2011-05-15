@@ -1,9 +1,8 @@
-
 {% extends "base_layout.html" %}
 
 {% block content %}
 
-<a href="/issues/new/">Add new issue</a><br /><br />
+<a href="/issues/new/" id="add-new-issue-button">Add new issue</a><br /><br />
 
 <table cellspacing="0" cellpadding="0" width="100%" id="issues">
 {% for issue in issues.object_list %}
@@ -40,5 +39,3 @@ No issues in the database
 </div>
 
 {% endblock %}
-
-

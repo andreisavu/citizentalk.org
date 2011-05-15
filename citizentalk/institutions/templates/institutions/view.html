@@ -4,6 +4,10 @@
 
 <h1>{{ institution.title }}</h1>
 
+{% if person_in_office %}
+<p>Person in office: {{ person_in_office.name }}</p>
+{% endif %}
+
 <div class="description">{{ institution.description }}</div>
 
 {% if issues %}
