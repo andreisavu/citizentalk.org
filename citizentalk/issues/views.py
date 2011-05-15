@@ -5,6 +5,7 @@ from django.http import Http404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.contrib.comments.models import Comment
 
 from tagging.models import Tag, TaggedItem
 
@@ -26,6 +27,19 @@ def view(request, id):
     return render_to_response('issues/view.html',
         {'issue': issue, 'institutions': institutions},
         context_instance = RequestContext(request))
+
+@login_required
+def add_comment(request):
+    if request.method == 'POST':
+        issue = get_object_or_404(Issue, pk=request.POST['issue_id'])
+        comment = Comment.objects.create(
+            content_object = issue, 
+            content_type = Issue,
+            object_pk = issue.id,
+            user = request.user, 
+            comment = request.POST['content'],
+            site_id = settings.SITE_ID)
+        return redirect('/issues/view/%d' % issue.id)
 
 @login_required
 def new(request):

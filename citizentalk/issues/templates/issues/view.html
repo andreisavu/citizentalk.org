@@ -57,8 +57,9 @@
     {% render_comment_list for issue %}
 
     <form method="post" action="/issues/comment/new/" style="width: 100%">
+        {% csrf_token %}
         <input type="hidden" name="issue_id" value="{{ issue.id }}" />
-        <textarea style="width: 100%" rows="10"></textarea>
+        <textarea name="content" style="width: 100%" rows="10"></textarea>
         <input type="submit" value="Post Comment" />
     </form>
 
