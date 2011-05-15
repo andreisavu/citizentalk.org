@@ -272,13 +272,18 @@ table#issues tr:hover {
     background-color : #ffffff;
 }
 
+
 table#issues td {
     border : 1px solid #eeeeee;
     padding : 10px;
 }
 
-td.issue-title {
+td.issue-title a {
     font-size : 16px;
+}
+
+td.issue-title {
+    font-size : 12px;
 }
 
 td.issue-user {
