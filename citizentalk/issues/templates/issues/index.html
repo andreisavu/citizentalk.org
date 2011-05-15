@@ -8,7 +8,10 @@
 <table cellspacing="0" cellpadding="0" width="100%" id="issues">
 {% for issue in issues.object_list %}
 <tr>
-    <td class="issue-title" width="90%"><a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a></td>
+    <td class="issue-title" width="90%">
+        <a href="/issues/view/{{ issue.id }}">{{ issue.title }}</a>
+        - {{ issue.created_at }}
+    </td>
     <td class="issue-user">{{ issue.reporter.username }}</td>
 </tr>
 
