@@ -257,3 +257,28 @@ ul.errorlist li {
     font-size : 12px;
     margin : 0 0 5px 0;
 }
+
+#attachments {
+    width: 450px;
+    padding: 10px;
+    float: right;
+}
+
+#comments {
+    width: 450px;
+    float: left;
+}
+
+#comments form {
+    width: auto !important;
+    margin: 0px;
+}
+
+#issue-attachments {
+    list-style: none;
+}
+
+#add-issue-attachment {
+    margin: 0px;
+    padding: .5em;
+}
